@@ -1,2 +1,2 @@
 # etchasketch
-The Odin Project Etch-a-sketch project
+The Odin Project's curriculum Etch-a-sketch project
