@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 const btn = document.querySelector("#create");
+const instructions = document.querySelector("#instructions");
 
 
 function getSideSize (){
@@ -19,21 +20,35 @@ function getRandomHexRGB (){
 btn.addEventListener("click", ()=>{
     container.innerHTML = "";
     let sideSize = getSideSize();
-    
     const squareCount = sideSize * sideSize;
     const squareWidth = (100 / sideSize);
-        for (let i = 0; i < squareCount; i++){
+    
+// creating grid of squares
+    for (let i = 0; i < squareCount; i++){
             let square = document.createElement("div");
             square.className = "square";
             square.style.flexBasis = `calc(${squareWidth}%)`;
             container.appendChild(square);
         }
-        for (const square of container.children){
+// coloring and opacity
+    for (const square of container.children){
+            let i = 0
             square.addEventListener("mouseover", ()=>{
                 square.style.backgroundColor = `#${getRandomHexRGB()}`
-  
-            });
-        }
-   
+                
+            }, {once : true});
+            square.addEventListener("mouseover", ()=>{
+                i++
+                square.style.opacity = `${10 * i}%`;
+            })
+        };
+    container.style.border = "2px solid black"
+
+    const para = document.createElement("h2");
+    
+    para.textContent = "Move your mouse over the pad to color it in. You can make a new pad any time by clicking the button again. If your computer struggles to process the coloring, make a smaller pad.";
+    instructions.appendChild(para);
+    
+
     
 });
