@@ -15,6 +15,5 @@ body{
 .square{
     flex-grow: 1;
     flex-shrink: 0;
-    border: 1px solid #f4f4f4;
     aspect-ratio: 1 / 1;
 }
