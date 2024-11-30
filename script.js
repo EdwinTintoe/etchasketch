@@ -19,6 +19,7 @@ function getRandomHexRGB (){
 
 btn.addEventListener("click", ()=>{
     container.innerHTML = "";
+    instructions.removeChild(instructions.lastChild);
     let sideSize = getSideSize();
     const squareCount = sideSize * sideSize;
     const squareWidth = (100 / sideSize);
